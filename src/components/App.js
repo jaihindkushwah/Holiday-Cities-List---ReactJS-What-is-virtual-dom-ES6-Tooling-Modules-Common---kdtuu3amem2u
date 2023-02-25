@@ -34,13 +34,30 @@ class App extends Component {
     { name: 'Mussoorie', country: 'India' },
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
-    ]
+    ];
+    // this.valid=this.valid.bind(this);
+
+  }
+
+  valid(){
+    let a=[];
+    let j=1;
+    for(let i=0;i<this.cityList.length;i++){
+      if(this.cityList[i].country==="India"){
+        a.push(<li key={"location" + j}>{this.cityList[i].name}</li>);
+        j++;
+      }
+      
+    }
+    return a;
   }
 
   render() {
+
     return (
       <div id="main">
         {/* Do not remove the main div */}
+        <ol>{this.valid()}</ol>
       </div>
     )
   }
