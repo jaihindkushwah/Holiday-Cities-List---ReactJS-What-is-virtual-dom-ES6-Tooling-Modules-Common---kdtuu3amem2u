@@ -53,7 +53,9 @@ class App extends Component {
     for(let i=0;i<this.cityList.length;i++){
       if(this.cityList[i].country==="India"){
         a.push(<li key={"location"+j}>{this.cityList[i].name}</li>);
+        if(j==3)break;
         j++;
+        
       }
       
     }
