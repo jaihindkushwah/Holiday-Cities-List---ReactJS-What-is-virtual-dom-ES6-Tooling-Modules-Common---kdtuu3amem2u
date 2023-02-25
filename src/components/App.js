@@ -2,7 +2,14 @@
 import React, { Component, useState } from "react";
 import '../styles/App.css';
 
+
+// function LI(props) {
+//   return <li key={"location"+ props.keys}>{props.city}</li>
+// }
+
+
 class App extends Component {
+  
   constructor(props) {
     super(props)
 
@@ -35,6 +42,7 @@ class App extends Component {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ];
+    
     // this.valid=this.valid.bind(this);
 
   }
@@ -44,20 +52,24 @@ class App extends Component {
     let j=1;
     for(let i=0;i<this.cityList.length;i++){
       if(this.cityList[i].country==="India"){
-        a.push(<li key={"location" + j}>{this.cityList[i].name}</li>);
+        a.push(<LI key={"location"+j}>{this.cityList[i].name}</LI>);
         j++;
       }
       
     }
-    return a;
+    return <ol>{a}</ol>;
   }
+  
 
   render() {
-
+    // let [j,setJ]=useState(0);
+    
     return (
       <div id="main">
         {/* Do not remove the main div */}
-        <ol>{this.valid()}</ol>
+        {this.valid()}
+        
+        
       </div>
     )
   }
